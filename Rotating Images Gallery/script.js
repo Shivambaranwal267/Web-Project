@@ -4,7 +4,7 @@ const prevEl = document.querySelector("#prev");
 const nextEl = document.querySelector("#Next");
 
 let x = 0;
-let timer;
+let timer = "";
 
 prevEl.addEventListener("click", () => {
   x = x + 45;
