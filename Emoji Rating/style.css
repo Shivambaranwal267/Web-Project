@@ -24,14 +24,15 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  /* background-color: yellow; */
   display: flex;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .far {
     margin: 1px;
-    transform: translateX(-200px);
+    /* transform: translateX(-50px); increase */
+    transform: translateX(0);
+    transition: transform 0.4s;
 }
 
 .rating-container {
