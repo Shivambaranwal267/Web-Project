@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rating</title>
+    <style>
+      .rating-container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px 100px;
+        gap: 10px;
+      }
+      .star {
+        background: rgb(194, 191, 191);
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ratin-showing">
+      <h1>Rating: <span class="no">0</span></h1>
+    </div>
+    <div class="rating-container">
+      <div class="star" onclick="colorChange(0)">0</div>
+      <div class="star" onclick="colorChange(1)">1</div>
+      <div class="star" onclick="colorChange(2)">2</div>
+      <div class="star" onclick="colorChange(3)">3</div>
+      <div class="star" onclick="colorChange(4)">4</div>
+    </div>
+
+    <script>
+      let star = document.getElementsByClassName("star");
+      let no = document.getElementsByClassName("no");
+      let increse = 0;
+      let validate_index = [];
+      validate_index[0] = -1;
+
+      let inc = 0;
+
+          function color(params) {
+            
+          }
+
+      function colorChange(val) {
+        if (validate_index.includes(val) == true) {
+          star[val].style = "background:rgb(194, 191, 191);";
+          increse--;
+          inc--;
+          let search_val = validate_index.indexOf(val);
+          validate_index.splice(search_val, 1);
+          no[0].innerHTML = increse;
+        } else {
+          star[val].style = "background:yellow;";
+          if (validate_index.length < 5) {
+            validate_index[inc] = val;
+            inc++;
+          }
+          increse++;
+          no[0].innerHTML = increse;
+        }
+      }
+    </script>
+  </body>
+</html>
